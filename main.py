@@ -3,6 +3,7 @@ from repo.parser import RepoParser
 from repo.report_generator import ReportGenerator
 from repo.reports.html_generator import HTMLGenerator
 from repo.reports.markdown_generator import MarkdownGenerator
+from repo.reports.write import ReportWriter
 from models.member import Member
 from models.manager import Manager
 
@@ -14,6 +15,9 @@ if __name__ == "__main__":
         repos = RepoParser.parse(response["body"])
         markdownReport = ReportGenerator.build(MarkdownGenerator, repos)
         htmlReport = ReportGenerator.build(HTMLGenerator, repos)
+
+        ReportWriter.write(markdownReport, "file")
+        ReportWriter.write(htmlReport, "database")
 
         print(markdownReport)
         print(htmlReport)
@@ -27,3 +31,4 @@ if __name__ == "__main__":
 
     member.work()
     manager.work()
+
