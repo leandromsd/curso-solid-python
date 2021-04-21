@@ -5,8 +5,5 @@ class Manager(User):
     def __init__(self, userName, email):
         super().__init__(userName, email)
 
-    def pay_bill(self):
+    def work(self):
         print("paying...")
-
-    def code(self):
-        pass

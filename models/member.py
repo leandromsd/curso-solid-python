@@ -9,8 +9,5 @@ class Member(User):
     def members():
         return ['username1', 'username2', 'username3']
 
-    def pay_bill(self):
-        pass
-
-    def code(self):
+    def work(self):
         print("coding...")
