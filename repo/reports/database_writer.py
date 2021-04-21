@@ -2,5 +2,5 @@
 class ReportDatabaseWriter():
 
     @staticmethod
-    def write_file(report):
+    def write(report):
         print('Dados gravados no banco de dados:')

@@ -4,6 +4,9 @@ from repo.report_generator import ReportGenerator
 from repo.reports.html_generator import HTMLGenerator
 from repo.reports.markdown_generator import MarkdownGenerator
 from repo.reports.write import ReportWriter
+from repo.reports.file_writer import ReportFileWriter
+from repo.reports.database_writer import ReportDatabaseWriter
+
 from models.member import Member
 from models.manager import Manager
 
@@ -16,8 +19,8 @@ if __name__ == "__main__":
         markdownReport = ReportGenerator.build(MarkdownGenerator, repos)
         htmlReport = ReportGenerator.build(HTMLGenerator, repos)
 
-        ReportWriter.write(markdownReport, "file")
-        ReportWriter.write(htmlReport, "database")
+        ReportWriter.write(markdownReport, ReportFileWriter)
+        ReportWriter.write(htmlReport, ReportDatabaseWriter)
 
         print(markdownReport)
         print(htmlReport)

@@ -2,7 +2,7 @@
 class ReportFileWriter():
 
     @staticmethod
-    def write_file(report):
+    def write(report):
         file = open('report.txt', 'a+')
         file.write(report)
         file.close()
