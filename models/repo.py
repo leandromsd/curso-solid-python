@@ -18,4 +18,4 @@ class Repo():
         return self._stars
 
     def __str__(self):
-        return f'ID: {self.id} | NAME: {self.name} | STARS: {self.stars}'
+        return f'ID: {self._id} | NAME: {self._name} | STARS: {self._stars}'
